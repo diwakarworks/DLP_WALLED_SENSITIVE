@@ -1,0 +1,30 @@
+{
+  "name": "walled-ai-dlp",
+  "version": "1.0.0",
+  "description": "Standalone Electron desktop DLP monitor for ChatGPT and Perplexity",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "dist": "electron-builder",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win",
+    "dist:linux": "electron-builder --linux"
+  },
+  "dependencies": {
+    "pdf-parse": "1.1.1",
+    "tesseract.js": "6.0.1"
+  },
+  "devDependencies": {
+    "electron": "34.3.0",
+    "electron-builder": "25.1.8"
+  },
+  "build": {
+    "appId": "com.walledai.dlp",
+    "productName": "Walled AI DLP",
+    "files": ["src/**/*", "package.json"],
+    "mac": { "category": "public.app-category.utilities" },
+    "win": { "target": "nsis" },
+    "linux": { "target": "AppImage" }
+  }
+}
